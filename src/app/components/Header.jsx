@@ -5,6 +5,10 @@ import Image from "next/image";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+  
 
   return (
     <header className="fixed w-full bg-gray-100 p-5 flex justify-between items-center z-10">
@@ -33,19 +37,19 @@ const Header = () => {
       </div>
       <nav className="hidden md:flex gap-10 text-lg">
         <a
-          href="#about"
+           onClick={() => scrollToSection("about")}
           className="border-1 border-black px-4 py-2 hover:text-gray-400 hover:border-gray-400 transition rounded-md"
         >
           Om mig
         </a>
         <a
-          href="#projects"
+          onClick={() => scrollToSection("projects")}
           className="border-1 border-black px-4 py-2 hover:text-gray-400 hover:border-gray-400 transition rounded-md"
         >
           Projekter
         </a>
         <a
-          href="#contact"
+          onClick={() => scrollToSection("footer")}
           className="border-1 border-black px-4 py-2 hover:text-gray-400 hover:border-gray-400 transition rounded-md"
         >
           Kontakt
