@@ -14,7 +14,7 @@ const Header = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image src="/img/github.svg" alt="GitHub" width={50} height={50} />
+          <Image src="/img/github.svg" alt="GitHub" width={50} height={50} className="hover:scale-110 transition-transform" />
         </a>
         <a
           href="https://www.linkedin.com/in/oscar-lund/"
@@ -27,6 +27,7 @@ const Header = () => {
             alt="LinkedIn"
             width={50}
             height={50}
+            className="hover:scale-110 transition-transform"
           />
         </a>
       </div>
