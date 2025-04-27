@@ -1,0 +1,126 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+
+const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  return (
+    <header className="fixed w-full bg-white p-5 flex justify-between items-center z-10">
+      <div className="flex flex-row gap-6 items-center">
+        <a
+          href="https://github.com/oscarlund121"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image src="/img/github.svg" alt="GitHub" width={50} height={50} />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/oscar-lund/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex"
+        >
+          <Image
+            src="/img/linkedin.svg"
+            alt="LinkedIn"
+            width={50}
+            height={50}
+          />
+        </a>
+      </div>
+      <nav className="hidden md:flex gap-10 text-lg">
+        <a
+          href="#about"
+          className="border-1 border-black px-4 py-2 hover:text-gray-400 hover:border-gray-400 transition rounded-md"
+        >
+          Om mig
+        </a>
+        <a
+          href="#projects"
+          className="border-1 border-black px-4 py-2 hover:text-gray-400 hover:border-gray-400 transition rounded-md"
+        >
+          Projekter
+        </a>
+        <a
+          href="#contact"
+          className="border-1 border-black px-4 py-2 hover:text-gray-400 hover:border-gray-400 transition rounded-md"
+        >
+          Kontakt
+        </a>
+        <a href="/CV-OscarLund.pdf" download>
+          <button className="bg-gray-300 px-5 py-2 hover:bg-black hover:text-gray-300 transition rounded-md">
+            CV
+          </button>
+        </a>
+      </nav>
+
+      <div className="md:hidden">
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="flex flex-col justify-center items-center space-y-1"
+        >
+          <span
+            className="block w-8 h-1 bg-black transition-all duration-300 rounded-md"
+            style={{
+              transform: menuOpen
+                ? "rotate(45deg) translate(5px, 5px)"
+                : "none",
+            }}
+          ></span>
+          <span
+            className={`block w-8 h-1 bg-black transition-all duration-300 rounded-md ${
+              menuOpen ? "opacity-0" : ""
+            }`}
+          ></span>
+          <span
+            className="block w-8 h-1 bg-black transition-all duration-300 rounded-md"
+            style={{
+              transform: menuOpen
+                ? "rotate(-45deg) translate(5px, -5px)"
+                : "none",
+            }}
+          ></span>
+        </button>
+      </div>
+
+      {/* Mobile Dropdown Menu */}
+      {menuOpen && (
+        <div className="absolute top-20 right-5 bg-white shadow-lg flex flex-col gap-6 p-8 rounded-md md:hidden">
+          <a
+            onClick={() => setMenuOpen(false)}
+            href="#about"
+            className="text-lg"
+          >
+            Om mig
+          </a>
+          <a
+            onClick={() => setMenuOpen(false)}
+            href="#projects"
+            className="text-lg"
+          >
+            Projekter
+          </a>
+          <a
+            onClick={() => setMenuOpen(false)}
+            href="#contact"
+            className="text-lg"
+          >
+            Kontakt
+          </a>
+          <a
+            onClick={() => setMenuOpen(false)}
+            href="/CV-OscarLund.pdf"
+            download
+            className="text-lg"
+          >
+            Download CV
+          </a>
+        </div>
+      )}
+    </header>
+  );
+};
+
+export default Header;

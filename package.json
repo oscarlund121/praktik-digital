@@ -9,9 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.3.1"
+    "@heroui/dropdown": "^2.3.17",
+    "@heroui/system": "^2.4.13",
+    "@heroui/theme": "^2.4.13",
+    "framer-motion": "^12.9.2",
+    "next": "15.3.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
