@@ -12,7 +12,7 @@ const About = () => {
           </h3>
           <div className="text-sm md:text-lg">
             <p>
-              Jeg søger en praktikplads, hvor jeg kan udvikle mig som
+              Jeg søger en praktikplads, fra 25. august - 31. oktober 2025, hvor jeg kan udvikle mig som
               frontend-udvikler og arbejde med HTML, CSS og JavaScript til at
               bygge brugervenlige og responsive webløsninger. Jeg har erfaring
               med Astro, Next.js og React som framworks, også har jeg arbejdet

@@ -60,7 +60,7 @@ const Header = () => {
           Kontakt
         </a>
         <a href="/CV-OscarLund.pdf" download>
-          <button className="bg-gray-300 px-5 py-2 hover:bg-black hover:text-gray-300 transition rounded-md">
+          <button className="bg-gray-300 px-5 py-2 hover:bg-black hover:text-gray-300 transition rounded-md cursor-pointer">
             CV
           </button>
         </a>

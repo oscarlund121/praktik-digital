@@ -1,5 +1,10 @@
 import Image from "next/image";
 const Projects = () => {
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+
   return (
     <section id="projects" className="py-20 px-8 max-w-6xl mx-auto">
       <h2 className="text-4xl font-bold underline mb-12 text-center">
