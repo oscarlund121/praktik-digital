@@ -137,7 +137,7 @@ const Header = () => {
             download
             className="text-lg"
           >
-            Download CV
+            CV
           </a>
         </div>
       )}
