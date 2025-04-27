@@ -12,6 +12,9 @@ const rethinkSans = Rethink_Sans({
 export const metadata = {
   title: "Praktik ansøgning",
   description: "Lavet af Oscar Lund Albertsen",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }) {
