@@ -8,7 +8,6 @@ const Header = () => {
   const scrollToSection = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
-  
 
   return (
     <header className="fixed w-full bg-gray-100 p-5 flex justify-between items-center z-10">
@@ -18,7 +17,13 @@ const Header = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image src="/img/github.svg" alt="GitHub" width={50} height={50} className="hover:scale-110 transition-transform" />
+          <Image
+            src="/img/github.svg"
+            alt="GitHub"
+            width={50}
+            height={50}
+            className="hover:scale-110 transition-transform"
+          />
         </a>
         <a
           href="https://www.linkedin.com/in/oscar-lund/"
@@ -37,7 +42,7 @@ const Header = () => {
       </div>
       <nav className="hidden md:flex gap-10 text-lg">
         <a
-           onClick={() => scrollToSection("about")}
+          onClick={() => scrollToSection("about")}
           className="border-1 border-black px-4 py-2 hover:text-gray-400 hover:border-gray-400 transition rounded-md"
         >
           Om mig
@@ -94,23 +99,35 @@ const Header = () => {
       {menuOpen && (
         <div className="absolute top-20 right-5 bg-white shadow-lg flex flex-col gap-6 p-8 rounded-md md:hidden">
           <a
-            onClick={() => setMenuOpen(false)}
-            href="#about"
-            className="text-lg"
+            onClick={() => {
+              document
+                .getElementById("about")
+                ?.scrollIntoView({ behavior: "smooth" });
+              setMenuOpen(false);
+            }}
+            className="text-lg cursor-pointer"
           >
             Om mig
           </a>
           <a
-            onClick={() => setMenuOpen(false)}
-            href="#projects"
-            className="text-lg"
+            onClick={() => {
+              document
+                .getElementById("projects")
+                ?.scrollIntoView({ behavior: "smooth" });
+              setMenuOpen(false);
+            }}
+            className="text-lg cursor-pointer"
           >
             Projekter
           </a>
           <a
-            onClick={() => setMenuOpen(false)}
-            href="#contact"
-            className="text-lg"
+            onClick={() => {
+              document
+                .getElementById("footer")
+                ?.scrollIntoView({ behavior: "smooth" });
+              setMenuOpen(false);
+            }}
+            className="text-lg cursor-pointer"
           >
             Kontakt
           </a>
