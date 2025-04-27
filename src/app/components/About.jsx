@@ -57,42 +57,42 @@ const About = () => {
                 alt="HTML"
                 width={48}
                 height={48}
-                className="w-12"
+                className="w-12 max-w-full"
               />
               <Image
                 src="/img/css.svg"
                 alt="CSS"
                 width={48}
                 height={48}
-                className="w-12"
+                className="w-12 max-w-full"
               />
               <Image
                 src="/img/javascript-144.svg"
                 alt="JavaScript"
                 width={48}
                 height={48}
-                className="w-12"
+                className="w-12 max-w-full"
               />
               <Image
                 src="/img/astro.svg"
                 alt="Astro"
                 width={48}
                 height={48}
-                className="w-12"
+                className="w-12 max-w-full"
               />
               <Image
                 src="/img/github.svg"
                 alt="GitHub"
                 width={48}
                 height={48}
-                className="w-12"
+                className="w-12 max-w-full"
               />
               <Image
                 src="/img/git.svg"
                 alt="Git"
                 width={48}
                 height={48}
-                className="w-12"
+                className="w-12 max-w-full"
               />
             </div>
           </div>
@@ -104,28 +104,28 @@ const About = () => {
                 alt="Next.js"
                 width={48}
                 height={48}
-                className="w-12"
+                className="w-12 max-w-full"
               />
               <Image
                 src="/img/react.svg"
                 alt="React"
                 width={48}
                 height={48}
-                className="w-12"
+                className="w-12 max-w-full"
               />
               <Image
                 src="/img/threejs.svg"
                 alt="Three.js"
                 width={48}
                 height={48}
-                className="w-12"
+                className="w-12 max-w-full"
               />
               <Image
                 src="/img/tailwind.svg"
                 alt="TailwindCSS"
                 width={48}
                 height={48}
-                className="w-12"
+                className="w-12 max-w-full"
               />
             </div>
           </div>
