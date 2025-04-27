@@ -1,7 +1,7 @@
 const Hero = ({}) => {
   return (
     <section className="min-h-screen flex flex-col justify-center px-12 pt-1 relative">
-      <div className="mb-10 ">
+      <div className="mb-2 sm:mb-5">
         <h1 className="text-5xl md:text-9xl font-bold break-words max-w-full mb-5">
           Multimedie studerende
         </h1>

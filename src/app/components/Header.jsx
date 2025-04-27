@@ -7,7 +7,7 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed w-full bg-white p-5 flex justify-between items-center z-10">
+    <header className="fixed w-full bg-gray-100 p-5 flex justify-between items-center z-10">
       <div className="flex flex-row gap-6 items-center">
         <a
           href="https://github.com/oscarlund121"
