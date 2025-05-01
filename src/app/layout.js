@@ -1,4 +1,5 @@
 import { Rethink_Sans } from "next/font/google";
+import { LanguageProvider } from "./context/LanguageSwitcher";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -18,9 +19,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="da">
       <body className={`${rethinkSans.variable} font-sans antialiased`}>
-        <Header />
-        {children}
-        <Footer />
+        <LanguageProvider>
+          <Header />
+          {children}
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

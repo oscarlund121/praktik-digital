@@ -1,10 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { useLanguage } from "../context/LanguageSwitcher";
 import Image from "next/image";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { language, toggleLanguage } = useLanguage(); 
+
   const scrollToSection = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -40,32 +43,42 @@ const Header = () => {
           />
         </a>
       </div>
-      <nav className="hidden md:flex gap-10 text-lg">
+
+      <nav className="hidden md:flex gap-10 text-lg items-center">
         <a
           onClick={() => scrollToSection("about")}
-          className="border-1 border-black px-4 py-2 hover:text-gray-400 hover:border-gray-400 transition rounded-md"
+          className="border-1 border-black px-4 py-2 hover:text-gray-400 hover:border-gray-400 transition rounded-md cursor-pointer"
         >
-          Om mig
+          {language === "da" ? "Om mig" : "About me"}
         </a>
         <a
           onClick={() => scrollToSection("projects")}
-          className="border-1 border-black px-4 py-2 hover:text-gray-400 hover:border-gray-400 transition rounded-md"
+          className="border-1 border-black px-4 py-2 hover:text-gray-400 hover:border-gray-400 transition rounded-md cursor-pointer"
         >
-          Projekter
+          {language === "da" ? "Projekter" : "Projects"}
         </a>
         <a
           onClick={() => scrollToSection("footer")}
-          className="border-1 border-black px-4 py-2 hover:text-gray-400 hover:border-gray-400 transition rounded-md"
+          className="border-1 border-black px-4 py-2 hover:text-gray-400 hover:border-gray-400 transition rounded-md cursor-pointer"
         >
-          Kontakt
+          {language === "da" ? "Kontakt" : "Contact"}
         </a>
         <a href="/CV-OscarLund.pdf" download>
           <button className="bg-gray-300 px-5 py-2 hover:bg-black hover:text-gray-300 transition rounded-md cursor-pointer">
             CV
           </button>
         </a>
+
+        {/* Sprogskifter-knap */}
+        <button
+          onClick={toggleLanguage}
+          className="ml-4 px-4 py-2 border border-black rounded-md hover:bg-gray-200 transition text-sm"
+        >
+          {language === "da" ? "EN" : "DA"}
+        </button>
       </nav>
 
+      {/* Burger Menu Mobile */}
       <div className="md:hidden">
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -100,45 +113,50 @@ const Header = () => {
         <div className="absolute top-20 right-5 bg-white shadow-lg flex flex-col gap-6 p-8 rounded-md md:hidden">
           <a
             onClick={() => {
-              document
-                .getElementById("about")
-                ?.scrollIntoView({ behavior: "smooth" });
+              scrollToSection("about");
               setMenuOpen(false);
             }}
             className="text-lg cursor-pointer"
           >
-            Om mig
+            {language === "da" ? "Om mig" : "About me"}
           </a>
           <a
             onClick={() => {
-              document
-                .getElementById("projects")
-                ?.scrollIntoView({ behavior: "smooth" });
+              scrollToSection("projects");
               setMenuOpen(false);
             }}
             className="text-lg cursor-pointer"
           >
-            Projekter
+            {language === "da" ? "Projekter" : "Projects"}
           </a>
           <a
             onClick={() => {
-              document
-                .getElementById("footer")
-                ?.scrollIntoView({ behavior: "smooth" });
+              scrollToSection("footer");
               setMenuOpen(false);
             }}
             className="text-lg cursor-pointer"
           >
-            Kontakt
+            {language === "da" ? "Kontakt" : "Contact"}
           </a>
           <a
-            onClick={() => setMenuOpen(false)}
             href="/CV-OscarLund.pdf"
             download
-            className="text-lg"
+            onClick={() => setMenuOpen(false)}
+            className="text-lg cursor-pointer"
           >
             CV
           </a>
+
+          {/* Sprogskifter-knap på mobilen */}
+          <button
+            onClick={() => {
+              toggleLanguage();
+              setMenuOpen(false);
+            }}
+            className="px-4 py-2 border border-black rounded-md hover:bg-gray-200 transition text-sm"
+          >
+            {language === "da" ? "EN" : "DA"}
+          </button>
         </div>
       )}
     </header>
