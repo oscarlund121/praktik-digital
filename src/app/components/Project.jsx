@@ -27,7 +27,7 @@ const Projects = () => {
         {text[language].title}
       </h2>
 
-      <div className="grid md:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
         {/* Project 1 */}
         <div className="p-4 shadow-lg flex flex-col gap-4 hover:scale-105 hover:bg-gray-100 transition-transform rounded-lg">
           <h4 className="text-2xl font-bold">Movie App</h4>
@@ -121,6 +121,40 @@ const Projects = () => {
             </a>
             <a
               href="https://github.com/oscarlund121/todo-app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center"
+            >
+              <Image
+                src="/img/github.svg"
+                alt="GitHub"
+                width={40}
+                height={40}
+                className="hover:scale-110 transition-transform"
+              />
+            </a>
+          </div>
+        </div>
+        <div className="p-4 shadow-lg flex flex-col gap-4 hover:scale-105 hover:bg-gray-100 transition-transform rounded-lg">
+          <h4 className="text-2xl font-bold">Three.js projekt</h4>
+          <Image
+            src="/img/three.png"
+            alt="To-do liste"
+            width={400}
+            height={300}
+            className="w-full h-auto rounded-md"
+          />
+          <div className="flex justify-between mt-4">
+            <a
+              href="https://three-materials-nine.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-black text-white hover:bg-white hover:text-black transition rounded-md"
+            >
+              {text[language].viewProject}
+            </a>
+            <a
+              href="https://github.com/oscarlund121/three-materials"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center"
