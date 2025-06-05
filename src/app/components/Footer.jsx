@@ -16,7 +16,7 @@ const Footer = () => {
           </p>
           <p>
             <a href="mobil:+45 22 23 25 39" className="hover:underline">
-              +45 22 22 33 44
+              +45 22 23 25 39
             </a>
           </p>
           <p>© {new Date().getFullYear()} Oscar Lund Albertsen.</p>
